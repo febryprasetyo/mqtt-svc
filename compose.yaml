@@ -1,0 +1,27 @@
+# Docker Compose file for a TypeScript application with PostgreSQL database
+services:
+  mqtt-svc:
+    container_name: mqtt-svc
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mqtt-svc:latest
+    restart: unless-stopped
+    init: true
+    env_file: .env
+    ports:
+      - '5010:5010'
+
+    networks:
+      - appnet
+    volumes:
+      - ./assets/logs:/app/assets/logs
+
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:5010/health']
+      interval: 30s
+      retries: 3
+
+networks:
+  appnet:
+    driver: bridge

@@ -1,0 +1,37 @@
+HOST=localhost
+PORT=5002
+NODE_ENV=production
+
+APP_URL=http://${HOST}:${PORT}
+JWT_SECRET_KEY=d764edde7b7dafe06d41bc6b1a325ff
+
+DB_CONNECTION=pg
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=mgmpsa
+DB_PASSWORD=mgm001
+DB_DATABASE=psa_data
+
+POSTGRES_USER=mgmpsa
+POSTGRES_PASSWORD=mgm001
+POSTGRES_DB=psadb
+
+
+MQTT_BROKER_URL=mqtt://103.84.206.53
+MQTT_PORT=1883
+MQTT_USER=cahaya
+MQTT_PASSWORD=cahaya123
+MQTT_KEEP_ALIVE=60
+MQTT_TOPIC=mqtt_ccb3aad79fe5
+
+API_KEY=
+API_SECRET=
+
+LOG_DIR=./assets/logs
+ASSET_DIR=./assets/files
+
+SHOW_ERROR_DETAIL=true
+
+SET_TIME_CRONJOB="* 0/1 * * *"
+# URL_KLHK="https://ppkl.menlhk.go.id/onlimo/uji/connect/uji_data_onlimo"
+URL_KLHK="https://ppkl.menlhk.go.id/onlimo/api/connect/data_integrasi"

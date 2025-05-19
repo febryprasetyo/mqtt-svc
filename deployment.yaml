@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mqtt-svc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mqtt-svc
+  template:
+    metadata:
+      labels:
+        app: mqtt-svc
+    spec:
+      containers:
+        - name: mqtt-svc
+          image: svc-chart-typescript-app:latest
+          ports:
+            - containerPort: 5010
+          resources:
+            requests:
+              memory: '128Mi'
+              cpu: '250m'
+            limits:
+              memory: '256Mi'
+              cpu: '500m'
